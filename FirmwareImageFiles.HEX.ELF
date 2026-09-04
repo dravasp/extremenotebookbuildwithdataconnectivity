@@ -1,6 +1,6 @@
 (EXPERT_MASTER_FIRMWARE
-  (VERSION 1.0)
-  (TITLE "Extreme Performance Laptop - Aerospace Grade Firmware")
+  (VERSION 2.6)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Firmware (X75 Edition)")
 
   ;; ===========================
   ;; Embedded Controller (EC)
@@ -9,12 +9,12 @@
     (File "ec_controller.hex")
     (Component "Embedded Controller for power, keyboard, trackpad")
     (Functions
-      (Fn1 "Battery monitoring via SMBus")
-      (Fn2 "Fan control for Dyson ionic blower")
+      (Fn1 "Battery monitoring via SMBus, graphene solid-state pack endurance validation")
+      (Fn2 "Fan control for Dyson ionic blower, PWM regulation")
       (Fn3 "Thermal sensor polling for graphene vapor chamber")
       (Fn4 "RTC synchronization with CMOS battery")
     )
-    (Signed "SHA-512, RSA-4096, OpenTitan root-of-trust")
+    (Signed "SHA-512, RSA-4096, OpenTitan root-of-trust, Pluton enclave")
   )
 
   ;; ===========================
@@ -28,7 +28,7 @@
       (Fn2 "Dynamic EQ and room correction")
       (Fn3 "I2S bus integration with ESS DAC")
     )
-    (Signed "SHA-512, TPM validation")
+    (Signed "SHA-512, TPM validation, secure FPGA loader")
   )
 
   ;; ===========================
@@ -42,7 +42,7 @@
       (Fn2 "HBM3 stack memory controller setup")
       (Fn3 "PCIe Gen5 lane training")
     )
-    (Signed "NVIDIA secure chain, Pluton enclave")
+    (Signed "NVIDIA secure chain, Pluton enclave, ECC-P384 certificates")
   )
   (NPU_MICROCODE
     (File "intel_npu.hex")
@@ -52,7 +52,22 @@
       (Fn2 "AI inference optimization")
       (Fn3 "Secure enclave integration")
     )
-    (Signed "Intel secure chain, TPM validation")
+    (Signed "Intel secure chain, TPM validation, OpenTitan RoT")
+  )
+
+  ;; ===========================
+  ;; WWAN Firmware
+  ;; ===========================
+  (WWAN_FIRMWARE
+    (File "snapdragon_x75.hex")
+    (Component "Qualcomm Snapdragon X75 WWAN M.2 3052 Key B")
+    (Functions
+      (Fn1 "Multi-active APN/QoS provisioning, 20 stored profiles, 1–5 active simultaneously")
+      (Fn2 "IMS/VoLTE/VoNR stack initialization")
+      (Fn3 "USSD and PDP context management")
+      (Fn4 "Secure SIM/eSIM LPA integration, GSMA-SGP.32 compliance")
+    )
+    (Signed "Qualcomm secure chain, ARM TrustZone, SHA-512 validation")
   )
 
   ;; ===========================
@@ -61,10 +76,10 @@
   (DIAGNOSTICS
     (File "diag_tools.elf")
     (Functions
-      (Fn1 "Thermal cycling validation")
+      (Fn1 "Thermal cycling validation, graphene battery endurance logs")
       (Fn2 "Vibration/shock MIL-STD-810G compliance logs")
-      (Fn3 "Humidity chamber monitoring")
+      (Fn3 "Humidity chamber monitoring, WWAN RF impedance validation")
     )
-    (Recovery "Dual firmware image, automatic failover")
+    (Recovery "Dual firmware image, automatic failover, WWAN profile persistence")
   )
 )
