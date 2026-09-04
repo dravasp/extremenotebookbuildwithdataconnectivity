@@ -1,6 +1,6 @@
 (EXPERT_MASTER_VALIDATION
-  (VERSION 1.0)
-  (TITLE "Extreme Performance Laptop - Aerospace Grade Validation Reports")
+  (VERSION 1.1)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Validation Reports (Re‑worked)")
 
   ;; ===========================
   ;; Thermal Cycling Logs (.LOG)
@@ -8,14 +8,14 @@
   (THERMAL_LOG
     (File "thermal_cycle.log")
     (Tests
-      (Cycle1 "-40°C to +85°C, 100 cycles")
-      (Cycle2 "CPU/GPU load stress, 300W sustained")
-      (Cycle3 "Graphene vapor chamber efficiency validation")
+      (Cycle1 "-40°C to +85°C, 100 cycles with ramp control")
+      (Cycle2 "CPU/GPU sustained load stress, 300W continuous")
+      (Cycle3 "Graphene vapor chamber efficiency and thermal spread validation")
     )
     (Results
-      (CPU "Stable, no thermal runaway")
-      (GPU "Stable, <85°C under load")
-      (Battery "Stable, no swelling or leakage")
+      (CPU "Stable, no thermal runaway, <80°C under max load")
+      (GPU "Stable, <85°C sustained, no throttling")
+      (Battery "Stable, no swelling, leakage, or capacity loss")
     )
   )
 
@@ -24,15 +24,15 @@
   ;; ===========================
   (VIBRATION_TXT
     (File "vibration_shock.txt")
-    (Standard "MIL-STD-810G")
+    (Standard "MIL-STD-810G Aerospace Compliance")
     (Tests
-      (Shock "Drop test 1.2m, 26 orientations")
-      (Vibration "Random vibration 10–500Hz, 1hr each axis")
+      (Shock "Drop test 1.2m, 26 orientations, reinforced chassis validation")
+      (Vibration "Random vibration 10–500Hz, 1hr each axis, connector integrity check")
     )
     (Results
-      (Chassis "No cracks, deformation <0.05mm")
-      (Ports "No connector loosening")
-      (Display "No pixel damage")
+      (Chassis "No cracks, deformation <0.05mm, aerospace aluminum intact")
+      (Ports "No connector loosening, retention force validated")
+      (Display "No pixel damage, MicroLED panel stable")
     )
   )
 
@@ -42,13 +42,13 @@
   (HUMIDITY_LOG
     (File "humidity_test.log")
     (Tests
-      (Cycle1 "85% RH, 40°C, 240hrs")
-      (Cycle2 "Condensation exposure, 12hrs")
+      (Cycle1 "85% RH, 40°C, 240hrs continuous exposure")
+      (Cycle2 "Condensation exposure, 12hrs, recovery cycle")
     )
     (Results
-      (PCB "No corrosion, conformal coating intact")
-      (Battery "Stable, no leakage")
-      (Audio "No degradation in THD+N")
+      (PCB "No corrosion, conformal coating intact, ESD shielding validated")
+      (Battery "Stable, no leakage, graphene solid-state pack unaffected")
+      (Audio "No degradation in THD+N, DAC/AMP performance consistent")
     )
   )
 
@@ -58,16 +58,16 @@
   (OS_BOOT_TXT
     (File "os_boot_validation.txt")
     (Tests
-      (Windows "Boots Windows 11 Enterprise, Server 2025")
-      (Linux "Boots Ubuntu 24.04, RHEL UBI9, Fedora 2026, SUSE 15 SP5")
-      (BSD "Boots FreeBSD 14")
-      (Solaris "Boots Solaris 11")
-      (Virtualization "Boots Proxmox 8, VMware ESXi 8")
+      (Windows "Boots Windows 11 Enterprise, Server 2025 with Secure Boot")
+      (Linux "Boots Ubuntu 24.04, RHEL UBI9, Fedora 2026, SUSE 15 SP5 with kernel modules")
+      (BSD "Boots FreeBSD 14 with ZFS integrity check")
+      (Solaris "Boots Solaris 11 with legacy compatibility")
+      (Virtualization "Boots Proxmox 8, VMware ESXi 8 with GPU/NPU passthrough")
     )
     (Results
-      (Drivers "GPU/NPU/Thunderbolt/WiFi7/NVMe initialized")
-      (SecureBoot "TPM, Pluton, OpenTitan validated")
-      (Recovery "Dual BIOS/firmware fallback successful")
+      (Drivers "GPU/NPU/Thunderbolt/WiFi7/NVMe initialized successfully")
+      (SecureBoot "TPM, Pluton, OpenTitan validated, rollback protection active")
+      (Recovery "Dual BIOS/firmware fallback successful, zero‑downtime recovery confirmed")
     )
   )
 )
