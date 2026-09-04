@@ -1,70 +1,70 @@
 (EXPERT_MASTER_GERBER
-  (VERSION 1.0)
-  (TITLE "Extreme Performance Laptop - Aerospace Grade Gerber Outputs")
+  (VERSION 1.1)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Gerber Outputs (Re‑worked)")
 
   ;; ===========================
   ;; Copper Layers
   ;; ===========================
   (FILE TopCopper.GBR
-    (CONTENT "Layer1: Signal traces, 2oz copper")
-    (RULES "DDR5 50Ω, PCIe Gen5 100Ω diff, USB PD 90Ω diff")
+    (CONTENT "Layer1: High-speed signal traces, 2oz copper")
+    (RULES "DDR5 50Ω single-ended, PCIe Gen5 100Ω differential, USB PD 90Ω differential")
   )
   (FILE InnerCopper1.GBR
-    (CONTENT "Layer3: High-speed PCIe/DDR5 differential pairs")
-    (RULES "Length match ±5 mils, jitter <0.15UI")
+    (CONTENT "Layer3: PCIe/DDR5 matched differential pairs")
+    (RULES "Length match ±5 mils, jitter budget <0.15UI, impedance controlled")
   )
   (FILE InnerCopper2.GBR
-    (CONTENT "Layer4: Power plane 1.2V/3.3V/5V")
-    (RULES "VRM rails, decoupling caps within 2mm")
+    (CONTENT "Layer4: Power distribution plane 1.2V/3.3V/5V")
+    (RULES "VRM rails, decoupling capacitors within 2mm of BGA pins")
   )
   (FILE BottomCopper.GBR
-    (CONTENT "Layer10: Signal traces, 2oz copper")
-    (RULES "Audio shielded nets, THD+N ≤-120dB")
+    (CONTENT "Layer10: Audio and auxiliary signal traces, 2oz copper")
+    (RULES "Shielded audio nets, THD+N ≤ -120dB, low-noise routing")
   )
 
   ;; ===========================
   ;; Drill Files
   ;; ===========================
   (FILE Drill.DRL
-    (CONTENT "Plated through holes 0.3–0.5mm, microvias 0.1mm laser")
-    (RULES "Blind/buried vias enabled, backdrill for PCIe Gen5 lanes")
+    (CONTENT "Plated through holes 0.3–0.5mm, microvias 0.1mm laser-drilled")
+    (RULES "Blind/buried vias enabled, backdrill applied for PCIe Gen5 lanes")
   )
 
   ;; ===========================
   ;; Solder Mask
   ;; ===========================
   (FILE SolderMaskTop.GBR
-    (CONTENT "Green solder mask, controlled openings for BGA pads")
-    (RULES "IPC-7351 compliant clearances")
+    (CONTENT "Green solder mask, precision openings for BGA pads")
+    (RULES "IPC-7351 compliant clearances, controlled mask expansion")
   )
   (FILE SolderMaskBottom.GBR
-    (CONTENT "Green solder mask, controlled openings for connectors")
-    (RULES "Moisture/ESD conformal coating applied")
+    (CONTENT "Green solder mask, precision openings for connectors")
+    (RULES "Moisture/ESD conformal coating applied, reliability validated")
   )
 
   ;; ===========================
   ;; Silkscreen
   ;; ===========================
   (FILE SilkscreenTop.GBR
-    (CONTENT "Component outlines, reference designators, polarity marks")
-    (RULES "Readable font ≥0.8mm, white ink")
+    (CONTENT "Component outlines, reference designators, polarity indicators")
+    (RULES "Readable font ≥0.8mm, white epoxy ink")
   )
   (FILE SilkscreenBottom.GBR
-    (CONTENT "Assembly notes, connector orientation, test points")
-    (RULES "Readable font ≥0.8mm, white ink")
+    (CONTENT "Assembly notes, connector orientation, test point markers")
+    (RULES "Readable font ≥0.8mm, white epoxy ink")
   )
 
   ;; ===========================
   ;; Fabrication Notes
   ;; ===========================
   (FABRICATION
-    (Compliance "RoHS CE BIS UL CCC FIPS140-3 NIST-SP800-193 IEC62368-1")
-    (Finish "ENIG - Electroless Nickel Immersion Gold")
-    (Dielectric "Rogers RO4003, 0.2mm core")
-    (AOI "Orbotech AOI validation")
-    (FlyingProbe "ATG impedance test")
-    (ThermalCycling "Validation chamber -40°C to +85°C")
-    (VibrationShock "MIL-STD-810G compliance")
-    (Humidity "85% RH chamber validation")
+    (Compliance "RoHS, CE, BIS, UL, CCC, FIPS140-3, NIST-SP800-193, IEC62368-1")
+    (Finish "ENIG - Electroless Nickel Immersion Gold, aerospace-grade durability")
+    (Dielectric "Rogers RO4003, 0.2mm core, impedance-controlled")
+    (AOI "Orbotech AOI validation for trace integrity")
+    (FlyingProbe "ATG impedance and continuity test")
+    (ThermalCycling "Validation chamber -40°C to +85°C, 100 cycles")
+    (VibrationShock "MIL-STD-810G compliance, drop/vibration tested")
+    (Humidity "85% RH chamber validation, conformal coating intact")
   )
 )
