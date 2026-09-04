@@ -1,6 +1,6 @@
 (EXPERT_MASTER_PACKAGES
-  (VERSION 1.0)
-  (TITLE "Extreme Performance Laptop - Aerospace Grade Driver Bundles")
+  (VERSION 2.6)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Driver Bundles (X75 Edition)")
 
   ;; ===========================
   ;; Windows Driver Bundle (.CAB)
@@ -13,9 +13,10 @@
       (Thunderbolt "Intel Thunderbolt5 driver - tb5.sys")
       (WiFi_BT "Quectel WiFi7/BT6 driver - wifi7_bt6.sys")
       (NVMe "Samsung NVMe Gen5 driver - nvme_gen5.sys")
+      (WWAN "Qualcomm Snapdragon X75 WWAN driver - x75_wwan.sys")
     )
-    (Signing "Microsoft WHQL, Pluton secure boot chain")
-    (Deployment "Windows Update, DISM integration")
+    (Signing "Microsoft WHQL, Pluton secure boot chain, ARM TrustZone validation")
+    (Deployment "Windows Update, DISM integration, WWAN APN/QoS provisioning hooks")
   )
 
   ;; ===========================
@@ -29,9 +30,10 @@
       (Thunderbolt "Thunderbolt5 kernel module - tb5.ko")
       (WiFi_BT "WiFi7/BT6 kernel module - wifi7_bt6.ko")
       (NVMe "NVMe Gen5 kernel module - nvme_gen5.ko")
+      (WWAN "Qualcomm Snapdragon X75 WWAN kernel module - x75_wwan.ko")
     )
-    (Signing "SHA-512, OpenTitan root-of-trust")
-    (Deployment "APT repository, dpkg installation")
+    (Signing "SHA-512, OpenTitan root-of-trust, TPM validation")
+    (Deployment "APT repository, dpkg installation, WWAN profile provisioning via QMI SDK")
   )
 
   ;; ===========================
@@ -45,8 +47,9 @@
       (Thunderbolt "Thunderbolt5 kernel module - tb5.ko")
       (WiFi_BT "WiFi7/BT6 kernel module - wifi7_bt6.ko")
       (NVMe "NVMe Gen5 kernel module - nvme_gen5.ko")
+      (WWAN "Qualcomm Snapdragon X75 WWAN kernel module - x75_wwan.ko")
     )
-    (Signing "SHA-512, TPM validation")
-    (Deployment "YUM/DNF repository, rpm installation")
+    (Signing "SHA-512, TPM validation, OpenTitan secure keyring")
+    (Deployment "YUM/DNF repository, rpm installation, WWAN APN/QoS provisioning hooks")
   )
 )
