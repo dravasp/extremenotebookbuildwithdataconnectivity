@@ -1,0 +1,52 @@
+(EXPERT_MASTER_PACKAGES
+  (VERSION 1.0)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Driver Bundles")
+
+  ;; ===========================
+  ;; Windows Driver Bundle (.CAB)
+  ;; ===========================
+  (WINDOWS_CAB
+    (File "drivers_bundle.cab")
+    (Components
+      (GPU "NVIDIA Ada5090M GPU driver - nvada5090.sys")
+      (NPU "Intel TOPS45 NPU driver - intel_npu.sys")
+      (Thunderbolt "Intel Thunderbolt5 driver - tb5.sys")
+      (WiFi_BT "Quectel WiFi7/BT6 driver - wifi7_bt6.sys")
+      (NVMe "Samsung NVMe Gen5 driver - nvme_gen5.sys")
+    )
+    (Signing "Microsoft WHQL, Pluton secure boot chain")
+    (Deployment "Windows Update, DISM integration")
+  )
+
+  ;; ===========================
+  ;; Debian/Ubuntu Package (.DEB)
+  ;; ===========================
+  (DEBIAN_DEB
+    (File "drivers_bundle.deb")
+    (Components
+      (GPU "NVIDIA Ada5090M kernel module - nvada5090.ko")
+      (NPU "Intel TOPS45 NPU kernel module - intel_npu.ko")
+      (Thunderbolt "Thunderbolt5 kernel module - tb5.ko")
+      (WiFi_BT "WiFi7/BT6 kernel module - wifi7_bt6.ko")
+      (NVMe "NVMe Gen5 kernel module - nvme_gen5.ko")
+    )
+    (Signing "SHA-512, OpenTitan root-of-trust")
+    (Deployment "APT repository, dpkg installation")
+  )
+
+  ;; ===========================
+  ;; Red Hat/SUSE Package (.RPM)
+  ;; ===========================
+  (REDHAT_RPM
+    (File "drivers_bundle.rpm")
+    (Components
+      (GPU "NVIDIA Ada5090M kernel module - nvada5090.ko")
+      (NPU "Intel TOPS45 NPU kernel module - intel_npu.ko")
+      (Thunderbolt "Thunderbolt5 kernel module - tb5.ko")
+      (WiFi_BT "WiFi7/BT6 kernel module - wifi7_bt6.ko")
+      (NVMe "NVMe Gen5 kernel module - nvme_gen5.ko")
+    )
+    (Signing "SHA-512, TPM validation")
+    (Deployment "YUM/DNF repository, rpm installation")
+  )
+)

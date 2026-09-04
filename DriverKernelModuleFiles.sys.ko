@@ -1,0 +1,76 @@
+(EXPERT_MASTER_DRIVERS
+  (VERSION 1.0)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Drivers")
+
+  ;; ===========================
+  ;; Windows Drivers (.SYS)
+  ;; ===========================
+  (WINDOWS_DRIVERS
+    (GPU_DRIVER
+      (File "nvada5090.sys")
+      (Component "NVIDIA Ada5090M GPU")
+      (Features "DirectX 12 Ultimate, CUDA, RTX AI acceleration")
+      (Signed "Microsoft WHQL, Pluton secure boot chain")
+    )
+    (NPU_DRIVER
+      (File "intel_npu.sys")
+      (Component "Intel TOPS45 Neural Processing Unit")
+      (Features "ONNX runtime acceleration, Windows ML integration")
+      (Signed "Microsoft WHQL, TPM validation")
+    )
+    (THUNDERBOLT_DRIVER
+      (File "tb5.sys")
+      (Component "Intel Thunderbolt 5 Controller")
+      (Features "80Gbps data, USB4 compatibility")
+      (Signed "Microsoft WHQL")
+    )
+    (WIFI_BT_DRIVER
+      (File "wifi7_bt6.sys")
+      (Component "Quectel FCE870Q WiFi7/BT6.0 combo")
+      (Features "WiFi 7 5.8Gbps, Bluetooth 6.0 BLE Audio")
+      (Signed "Microsoft WHQL")
+    )
+    (NVME_DRIVER
+      (File "nvme_gen5.sys")
+      (Component "Samsung NVMe Gen5 SSD")
+      (Features "14GB/s throughput, PCIe Gen5 compliance")
+      (Signed "Microsoft WHQL")
+    )
+  )
+
+  ;; ===========================
+  ;; Linux Kernel Modules (.KO)
+  ;; ===========================
+  (LINUX_MODULES
+    (GPU_MODULE
+      (File "nvada5090.ko")
+      (Component "NVIDIA Ada5090M GPU")
+      (Features "CUDA, TensorRT, Vulkan, OpenCL")
+      (Signed "SHA-512, OpenTitan root-of-trust")
+    )
+    (NPU_MODULE
+      (File "intel_npu.ko")
+      (Component "Intel TOPS45 NPU")
+      (Features "ONNX runtime, PyTorch acceleration")
+      (Signed "SHA-512, TPM validation")
+    )
+    (THUNDERBOLT_MODULE
+      (File "tb5.ko")
+      (Component "Thunderbolt 5 Controller")
+      (Features "USB4, PCIe tunneling, hotplug support")
+      (Signed "SHA-512, kernel keyring")
+    )
+    (WIFI_BT_MODULE
+      (File "wifi7_bt6.ko")
+      (Component "Quectel FCE870Q WiFi7/BT6.0")
+      (Features "WiFi 7 stack, Bluetooth 6.0 BLE Audio")
+      (Signed "SHA-512, kernel keyring")
+    )
+    (NVME_MODULE
+      (File "nvme_gen5.ko")
+      (Component "Samsung NVMe Gen5 SSD")
+      (Features "PCIe Gen5 NVMe driver, 14GB/s throughput")
+      (Signed "SHA-512, kernel keyring")
+    )
+  )
+)

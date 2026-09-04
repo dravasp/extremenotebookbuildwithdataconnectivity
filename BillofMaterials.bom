@@ -1,0 +1,192 @@
+(EXPERT_MASTER_BOM
+  (VERSION 1.0)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade BOM")
+
+  ;; ===========================
+  ;; Compute & Memory
+  ;; ===========================
+  (ITEM CPU_INTEL_I9_14900HX
+    (MANUFACTURER Intel) (PART_NUMBER BX8071514900HX) (COUNTRY USA)
+    (SPEC TDP=125W Voltage=1.2V Speed=5.8GHz Turbo)
+    (QTY 1)
+  )
+  (ITEM GPU_NVIDIA_ADA5090M
+    (MANUFACTURER NVIDIA) (PART_NUMBER NVB5090M-24G-G7) (COUNTRY USA)
+    (SPEC TDP=250W Voltage=1.8V Speed=2.5GHz Core)
+    (QTY 1)
+  )
+  (ITEM GPU_NANOWIRE_AI_QUANTUM
+    (MANUFACTURER Custom) (COUNTRY Japan)
+    (SPEC TDP=300W Voltage=1.0V Flux=350W)
+    (QTY 1)
+  )
+  (ITEM MEMORY_DDR5X_MICRON
+    (MANUFACTURER Micron) (PART_NUMBER MTC40F4086S1HC88XD1R) (COUNTRY USA)
+    (SPEC Voltage=1.1V Speed=6400 MT/s)
+    (QTY 2 DIMMs)
+  )
+  (ITEM MEMORY_HBM3_STACK
+    (MANUFACTURER Samsung) (PART_NUMBER HBM3-256GB) (COUNTRY Korea)
+    (SPEC Voltage=1.2V Speed=819GB/s Capacity=256GB)
+    (QTY 1)
+  )
+
+  ;; ===========================
+  ;; Storage & Security
+  ;; ===========================
+  (ITEM NVMe_GEN5_SSD
+    (MANUFACTURER Samsung) (PART_NUMBER MZVL24T0HBLU-G5) (COUNTRY Korea)
+    (SPEC Voltage=3.3V Speed=14GB/s)
+    (QTY 2)
+  )
+  (ITEM TPM_INFINEON
+    (MANUFACTURER Infineon) (PART_NUMBER SLB9670) (COUNTRY Germany)
+    (SPEC Voltage=3.3V Security=FIPS140-3)
+    (QTY 1)
+  )
+  (ITEM PLUTON_SEC_CHIP
+    (MANUFACTURER Microsoft) (PART_NUMBER MS-PLUTON-SECURE) (COUNTRY USA)
+    (SPEC Voltage=1.8V)
+    (QTY 1)
+  )
+  (ITEM YUBIHSM2
+    (MANUFACTURER Yubico) (PART_NUMBER YubiHSM2-FIPS) (COUNTRY Sweden)
+    (SPEC Voltage=5V)
+    (QTY 1)
+  )
+  (ITEM OPEN_TITAN_ROOT_OF_TRUST
+    (MANUFACTURER LowRISC) (PART_NUMBER OPENTITAN-SECURE) (COUNTRY UK)
+    (SPEC Voltage=1.8V)
+    (QTY 1)
+  )
+
+  ;; ===========================
+  ;; Networking & Wireless
+  ;; ===========================
+  (ITEM WIFI7_BT6_COMBO
+    (MANUFACTURER Quectel) (PART_NUMBER FCE870Q) (COUNTRY China)
+    (SPEC Voltage=3.3V Speed=5.8Gbps WiFi)
+    (QTY 1)
+  )
+  (ITEM NFC_MODULE_HP
+    (MANUFACTURER HP) (PART_NUMBER W126068422) (COUNTRY USA)
+    (SPEC Voltage=3.3V)
+    (QTY 1)
+  )
+  (ITEM QSFP_DD_PORT
+    (MANUFACTURER Molex) (PART_NUMBER 74752-SFP28) (COUNTRY USA)
+    (SPEC Voltage=3.3V)
+    (QTY 1)
+  )
+  (ITEM THUNDERBOLT5_CONTROLLER
+    (MANUFACTURER Intel) (PART_NUMBER TB5-IC-80GBPS) (COUNTRY USA)
+    (SPEC Voltage=3.3V)
+    (QTY 1)
+  )
+
+  ;; ===========================
+  ;; Audio Stack
+  ;; ===========================
+  (ITEM DAC_ESS_SABRE
+    (MANUFACTURER ESS) (PART_NUMBER ES9039PRO) (COUNTRY USA)
+    (SPEC Voltage=3.3V THD+N=-120dB SNR=130dB)
+    (QTY 1)
+  )
+  (ITEM AMP_THX_AAA888
+    (MANUFACTURER THX) (PART_NUMBER THX-AAA-888) (COUNTRY USA)
+    (SPEC Voltage=5V)
+    (QTY 1)
+  )
+  (ITEM DSP_DIRAC_LIVE
+    (MANUFACTURER Dirac) (PART_NUMBER DIRAC-LIVE-DSP) (COUNTRY Sweden)
+    (SPEC Voltage=3.3V)
+    (QTY 1)
+  )
+  (ITEM AUDIO_JACK
+    (MANUFACTURER Amphenol) (PART_NUMBER AMP-3.5MM-SHIELD) (COUNTRY USA)
+    (SPEC Voltage=5V Shielded contacts)
+    (QTY 1)
+  )
+
+  ;; ===========================
+  ;; Display & Ports
+  ;; ===========================
+  (ITEM DISPLAY_MICROLED
+    (MANUFACTURER AUO) (PART_NUMBER AUO-MLED-16UHD) (COUNTRY Taiwan)
+    (SPEC Voltage=12V Resolution=3840x2160)
+    (QTY 1)
+  )
+  (ITEM USB_PD_PORT
+    (MANUFACTURER Amphenol) (PART_NUMBER USB-C-EPR-240W) (COUNTRY USA)
+    (SPEC Voltage=20V Current=12A)
+    (QTY 2)
+  )
+  (ITEM DC_JACK
+    (MANUFACTURER Delta) (PART_NUMBER DC-JACK-12V10A) (COUNTRY Taiwan)
+    (SPEC Voltage=12V Current=10A)
+    (QTY 1)
+  )
+  (ITEM SD_EXPRESS_SLOT
+    (MANUFACTURER Amphenol) (PART_NUMBER SD-EXPRESS-8.0) (COUNTRY USA)
+    (SPEC Voltage=3.3V Speed=985MB/s)
+    (QTY 1)
+  )
+  (ITEM BLU_RAY_DRIVE
+    (MANUFACTURER Panasonic) (PART_NUMBER PAN-BD-SATA-SLIM) (COUNTRY Japan)
+    (SPEC Voltage=5V Speed=6x Blu-ray)
+    (QTY 1)
+  )
+
+  ;; ===========================
+  ;; Cooling & Thermal
+  ;; ===========================
+  (ITEM GRAPHENE_VAPOR_CHAMBER
+    (MANUFACTURER CoolerMaster) (PART_NUMBER CM-GRAPHENE-VC) (COUNTRY Taiwan)
+    (SPEC ThermalConductivity=1500W/mK Load=300W)
+    (QTY 1)
+  )
+  (ITEM LIQUID_METAL_TIM
+    (MANUFACTURER ThermalGrizzly) (PART_NUMBER TG-Conductonaut) (COUNTRY Germany)
+    (SPEC Resistance<0.01K/W Coverage≥95%)
+    (QTY 1 tube)
+  )
+  (ITEM BLADELESS_BLOWER
+    (MANUFACTURER Dyson) (PART_NUMBER DY-IONIC-MICRO) (COUNTRY UK)
+    (SPEC Airflow>20CFM Noise<25dBA)
+    (QTY 1)
+  )
+
+  ;; ===========================
+  ;; Battery & Power
+  ;; ===========================
+  (ITEM SOLID_STATE_BATTERY
+    (MANUFACTURER QuantumScape) (PART_NUMBER QS-PACK-480WH) (COUNTRY USA)
+    (SPEC EnergyDensity=480Wh/kg CycleLife=3000+)
+    (QTY 1)
+  )
+  (ITEM CMOS_BATTERY
+    (MANUFACTURER Panasonic) (PART_NUMBER VL2330) (COUNTRY Japan)
+    (SPEC Voltage=3V Capacity=50mAh)
+    (QTY 1)
+  )
+  (ITEM VRM_TI_TPS
+    (MANUFACTURER Texas Instruments) (PART_NUMBER TPS53689) (COUNTRY USA)
+    (SPEC Conversion=12V->1.2V Transient<50mV)
+    (QTY 3 rails)
+  )
+  (ITEM MOSFET_INFINEON
+    (MANUFACTURER Infineon) (PART_NUMBER BSC123N08NS3) (COUNTRY Germany)
+    (SPEC Voltage=80V Current=120A RdsOn=3.2mΩ)
+    (QTY 6)
+  )
+  (ITEM PMIC_NXP
+    (MANUFACTURER NXP) (PART_NUMBER PF8100) (COUNTRY Netherlands)
+    (SPEC Multi-rail 0.8–5V)
+    (QTY 2)
+  )
+  (ITEM PASSIVES
+    (MANUFACTURERS Murata, TDK, Vishay, Coilcraft)
+    (SPEC Caps=100nF–220µF Res=0.01–10kΩ Inductors=0.1–10µH)
+    (QTY Bulk distributed)
+  )
+)

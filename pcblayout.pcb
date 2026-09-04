@@ -1,0 +1,90 @@
+(EXPERT_MASTER_PCB
+  (VERSION 1.0)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade PCB Layout")
+
+  ;; ===========================
+  ;; Layer Stack
+  ;; ===========================
+  (STACKUP
+    (Layer1 "Top Signal, 2oz copper")
+    (Layer2 "Ground Plane")
+    (Layer3 "High-Speed PCIe/DDR5 Differential Pairs")
+    (Layer4 "Power Plane 1.2V/3.3V/5V")
+    (Layer5 "Inner Signal")
+    (Layer6 "Ground Plane")
+    (Layer7 "Power Plane GPU/NPU domains")
+    (Layer8 "High-Speed NVMe/Thunderbolt lanes")
+    (Layer9 "Ground Plane")
+    (Layer10 "Bottom Signal, 2oz copper")
+    (Dielectric "Rogers RO4003, 0.2mm core")
+    (Finish "ENIG - Electroless Nickel Immersion Gold")
+    (Microvias "0.1mm laser drilled")
+    (Backdrill "Enabled for PCIe Gen5 lanes")
+  )
+
+  ;; ===========================
+  ;; Routing Rules
+  ;; ===========================
+  (ROUTING
+    (DDR5 "50Ω single-ended, ±10ps skew, length match ±5 mils")
+    (HBM3 "45Ω single-ended, 85Ω differential, length match ±3 mils")
+    (PCIe_Gen5 "100Ω differential, jitter <0.15UI, pre-emphasis enabled")
+    (USB_PD "90Ω differential, clearance 0.25mm, creepage 2mm")
+    (QSFP_DD "400G lanes, skew ≤5ps, impedance 100Ω diff")
+    (Audio "Shielded traces, THD+N ≤-120dB, SNR ≥130dB")
+  )
+
+  ;; ===========================
+  ;; Footprints
+  ;; ===========================
+  (FOOTPRINTS
+    (CPU "Intel BGA-1700, IPC-7351 compliant")
+    (GPU "NVIDIA BGA-2400, IPC-7351 compliant")
+    (NPU "Intel BGA-800")
+    (DDR5_DIMM "Micron DIMM-288 socket")
+    (HBM3 "Samsung stacked BGA")
+    (NVMe "Samsung M.2-2280 connector")
+    (TPM "Infineon QFN-64")
+    (Pluton "Microsoft QFN-48")
+    (OpenTitan "LowRISC QFN-64")
+    (WiFi_BT "Quectel M.2-2230")
+    (QSFP_DD "Molex QSFP-DD cage")
+    (Thunderbolt5 "Intel QFN-128")
+    (DAC "ESS QFN-64")
+    (AMP "THX custom footprint")
+    (DSP "Dirac FPGA footprint")
+    (AudioJack "Amphenol 3.5mm shielded TH footprint")
+    (Display "AUO MicroLED custom connector")
+    (USB_PD "Amphenol USB-C EPR footprint")
+    (DC_Jack "Delta barrel jack footprint")
+    (SDExpress "Amphenol SD Express slot")
+    (BluRay "Panasonic Slimline SATA footprint")
+  )
+
+  ;; ===========================
+  ;; Placement Constraints
+  ;; ===========================
+  (PLACEMENT
+    (CPU_GPU "Centered for thermal symmetry")
+    (DDR5_DIMMs "Parallel above CPU/GPU")
+    (NVMe "Aligned bottom edge")
+    (Clearance "0.25mm minimum")
+    (Creepage "2mm minimum")
+    (FerriteBeads "On all power rails")
+    (ESD_Diodes "USB, HDMI, SD Express ports")
+    (CopperPour "Shielding for PCIe lanes")
+    (GuardTraces "Around high-speed nets")
+  )
+
+  ;; ===========================
+  ;; Manufacturability
+  ;; ===========================
+  (FABRICATION_RULES
+    (Compliance "RoHS CE BIS UL CCC FIPS140-3 NIST-SP800-193 IEC62368-1")
+    (AOI "Orbotech AOI validation")
+    (FlyingProbe "ATG impedance test")
+    (ThermalCycling "Validation chamber -40°C to +85°C")
+    (VibrationShock "MIL-STD-810G compliance")
+    (Humidity "85% RH chamber validation")
+  )
+)

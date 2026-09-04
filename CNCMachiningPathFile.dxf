@@ -1,0 +1,64 @@
+(EXPERT_MASTER_CNC_DXF
+  (VERSION 1.0)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade CNC Machining")
+
+  ;; ===========================
+  ;; Chassis Base
+  ;; ===========================
+  (SECTION BASE_PLATE
+    (Material "Aerospace Aluminum 7075-T6")
+    (Operations
+      (Op1 "Mill base outline 360mm x 250mm x 18mm")
+      (Op2 "Cut venting slots: 2mm x 40mm, 12 slots evenly spaced")
+      (Op3 "Drill mounting holes: M2.5, tolerance ±0.05mm")
+      (Op4 "Pocket recess for solid-state battery pack")
+    )
+  )
+
+  ;; ===========================
+  ;; Chassis Lid
+  ;; ===========================
+  (SECTION LID_PLATE
+    (Material "Aerospace Aluminum 7075-T6")
+    (Operations
+      (Op1 "Mill lid outline 360mm x 250mm x 5mm")
+      (Op2 "Laser cut display opening: 340mm x 220mm")
+      (Op3 "Drill hinge mounts: Titanium Ti-6Al-4V, 50,000 cycle rating")
+      (Op4 "Cut speaker grill: 1mm perforations, 60% open area")
+    )
+  )
+
+  ;; ===========================
+  ;; Port Openings
+  ;; ===========================
+  (SECTION PORTS
+    (Operations
+      (Op1 "USB-C PD ports: 8mm x 3mm rectangular cutouts, chamfered edges")
+      (Op2 "DC barrel jack: Ø8mm circular cutout")
+      (Op3 "SD Express slot: 24mm x 2.1mm opening, right edge placement")
+      (Op4 "QSFP-DD cage: 18mm x 14mm rectangular cutout")
+      (Op5 "Blu-ray SATA drive: 128mm x 12.7mm slimline slot")
+    )
+  )
+
+  ;; ===========================
+  ;; Thermal Inserts
+  ;; ===========================
+  (SECTION THERMAL_INSERTS
+    (Material "Copper alloy")
+    (Operations
+      (Op1 "Pocket recess under CPU zone: 40mm x 40mm x 2mm")
+      (Op2 "Pocket recess under GPU zone: 50mm x 50mm x 2mm")
+      (Op3 "Drill thermal sensor mounting holes Ø2mm")
+    )
+  )
+
+  ;; ===========================
+  ;; Tolerances & Validation
+  ;; ===========================
+  (TOLERANCES
+    (Dimensional "±0.05mm holes, ±0.1mm enclosure fit")
+    (SurfaceFinish "Anodized aluminum, PVD coating")
+    (Validation "CMM inspection, vibration/shock MIL-STD-810G compliance")
+  )
+)

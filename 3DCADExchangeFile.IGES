@@ -1,0 +1,68 @@
+(EXPERT_MASTER_IGES
+  (VERSION 1.0)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade IGES Model")
+
+  ;; ===========================
+  ;; Enclosure Geometry
+  ;; ===========================
+  (ENTITY CHASSIS_BASE
+    (Material "Aerospace Aluminum 7075-T6")
+    (Dimensions "360mm x 250mm x 18mm")
+    (Tolerance "±0.05mm holes, ±0.1mm enclosure fit")
+    (Features
+      (MountingHoles "M2.5, countersunk, 12 positions")
+      (VentSlots "2mm x 40mm, evenly spaced")
+      (BatteryPocket "130mm x 90mm x 8mm cavity")
+    )
+  )
+  (ENTITY CHASSIS_LID
+    (Material "Aerospace Aluminum 7075-T6")
+    (Dimensions "360mm x 250mm x 5mm")
+    (Features
+      (DisplayOpening "340mm x 220mm cutout")
+      (SpeakerGrill "1mm perforations, 60% open area")
+      (HingeMounts "Titanium Ti-6Al-4V, 50,000 cycle rating")
+    )
+  )
+
+  ;; ===========================
+  ;; Display Integration
+  ;; ===========================
+  (ENTITY DISPLAY_PANEL
+    (Component "AUO MicroLED UHD")
+    (Opening "340mm x 220mm")
+    (Mount "Custom LVDS connector, recessed bezel")
+    (Flux "50W dissipation, copper spreaders integrated")
+  )
+
+  ;; ===========================
+  ;; Thermal Inserts
+  ;; ===========================
+  (ENTITY THERMAL_INSERTS
+    (Material "Copper alloy")
+    (CPU_Pocket "40mm x 40mm x 2mm")
+    (GPU_Pocket "50mm x 50mm x 2mm")
+    (SensorMounts "Ø2mm drill holes")
+  )
+
+  ;; ===========================
+  ;; Ports & Slots
+  ;; ===========================
+  (ENTITY PORTS
+    (USB_PD "2x USB-C EPR 240W, chamfered cutouts")
+    (DC_Jack "Ø8mm barrel jack opening")
+    (SDExpress "24mm x 2.1mm slot, right edge")
+    (QSFP_DD "18mm x 14mm cage opening")
+    (BluRayDrive "128mm x 12.7mm slimline slot")
+  )
+
+  ;; ===========================
+  ;; Ergonomics
+  ;; ===========================
+  (ENTITY ERGONOMICS
+    (Keypad "Numeric, white backlight, no RGB")
+    (Trackpad "130x90mm glass, centered")
+    (PowerButton "Isolated near hinge axis")
+    (SurfaceFinish "Anodized aluminum + PVD coating")
+  )
+)

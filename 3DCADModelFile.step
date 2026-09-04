@@ -1,0 +1,70 @@
+(EXPERT_MASTER_STEP
+  (VERSION 1.0)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade 3D CAD Model")
+
+  ;; ===========================
+  ;; Enclosure Geometry
+  ;; ===========================
+  (CHASSIS
+    (Material "Aerospace Aluminum 7075-T6")
+    (Dimensions "360mm x 250mm x 18mm base, 360mm x 250mm x 5mm lid")
+    (Tolerance "±0.05mm holes, ±0.1mm enclosure fit")
+    (Features
+      (Hinges "Titanium Ti-6Al-4V, 50,000 cycle rating")
+      (VentSlots "2mm x 40mm, 12 slots evenly spaced")
+      (SpeakerGrill "1mm perforations, 60% open area")
+    )
+  )
+
+  ;; ===========================
+  ;; Display Integration
+  ;; ===========================
+  (DISPLAY
+    (Component "AUO MicroLED Panel")
+    (Opening "340mm x 220mm cutout")
+    (Mount "Custom LVDS connector, recessed bezel")
+    (Flux "50W dissipation, thermal spreaders integrated")
+  )
+
+  ;; ===========================
+  ;; Battery Pack
+  ;; ===========================
+  (BATTERY
+    (Component "QuantumScape Solid-State Pack")
+    (Pocket "Recessed cavity under palm rest")
+    (Dimensions "130mm x 90mm x 8mm")
+    (SMBus "Header integrated for monitoring")
+    (Safety "Non-flammable electrolyte, UL IEC BIS certified")
+  )
+
+  ;; ===========================
+  ;; Thermal Management
+  ;; ===========================
+  (THERMAL
+    (GrapheneVaporChamber "≥1500W/mK conductivity, 300W load capacity")
+    (LiquidMetalTIM "Coverage ≥95%, resistance <0.01K/W")
+    (DysonBlower "Bladeless ionic blower, >20CFM airflow, <25dBA noise")
+    (CopperInserts "CPU pocket 40x40x2mm, GPU pocket 50x50x2mm")
+  )
+
+  ;; ===========================
+  ;; Ports & Slots
+  ;; ===========================
+  (PORTS
+    (USB_PD "2x USB-C EPR 240W, chamfered cutouts")
+    (DC_Jack "Ø8mm barrel jack, reinforced mount")
+    (SDExpress "24mm x 2.1mm slot, right edge placement")
+    (QSFP_DD "18mm x 14mm cage opening")
+    (BluRayDrive "128mm x 12.7mm slimline slot")
+  )
+
+  ;; ===========================
+  ;; Ergonomics
+  ;; ===========================
+  (ERGONOMICS
+    (Keypad "Numeric, white backlight, no RGB")
+    (Trackpad "130x90mm glass, centered below keyboard")
+    (PowerButton "Isolated near hinge axis")
+    (SurfaceFinish "Anodized aluminum + PVD coating")
+  )
+)
