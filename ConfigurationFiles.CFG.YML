@@ -1,6 +1,6 @@
 (EXPERT_MASTER_CONFIG
-  (VERSION 1.0)
-  (TITLE "Extreme Performance Laptop - Aerospace Grade Configuration")
+  (VERSION 2.6)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Configuration (X75 Edition)")
 
   ;; ===========================
   ;; Install Parameters (.CFG)
@@ -11,9 +11,10 @@
       (Language "en-US")
       (Keyboard "US-International")
       (Partition "UEFI GPT, Secure Boot enabled")
-      (Drivers "Preloaded GPU, NPU, NVMe, WiFi7")
-      (Security "TPM, Pluton, OpenTitan validation")
-      (Provisioning "Office, AutoCAD, Adobe Creative Suite, .NET Core, VS Code")
+      (Drivers "Preloaded GPU, NPU, NVMe, WiFi7, WWAN X75")
+      (Security "TPM, Pluton, OpenTitan, ARM TrustZone validation")
+      (Provisioning "Office, AutoCAD, Adobe Creative Suite, .NET Core, VS Code, QMI SDK for APN provisioning")
+      (WWAN "20 stored profiles, 1–5 active simultaneously, IMS/VoLTE/VoNR enabled")
     )
   )
   (LINUX_INSTALL_CFG
@@ -22,9 +23,10 @@
       (Language "en-US")
       (Keyboard "US")
       (Partition "EXT4, EFI boot partition")
-      (Drivers "GPU CUDA, NPU ONNX, NVMe Gen5, WiFi7")
-      (Security "SELinux/AppArmor policies")
-      (Provisioning "Docker, Kubernetes, VS Code")
+      (Drivers "GPU CUDA, NPU ONNX, NVMe Gen5, WiFi7, WWAN X75 kernel module")
+      (Security "SELinux/AppArmor policies, Root of Trust enforcement")
+      (Provisioning "Docker, Kubernetes, VS Code, QMI SDK for APN/QoS provisioning")
+      (WWAN "Multi-active PDP contexts, IMS/VoLTE/VoNR, USSD enabled")
     )
   )
 
@@ -33,32 +35,32 @@
   ;; ===========================
   (KUBERNETES_DEPLOYMENT_YML
     (File "cluster_deployment.yml")
-    (Cluster "GPU/NPU accelerated workloads")
+    (Cluster "GPU/NPU/WWAN accelerated workloads")
     (Nodes
-      (Node1 "Windows Server 2025 VM, Hyper-V enabled")
-      (Node2 "Ubuntu 24.04 VM, Docker + Kubernetes")
-      (Node3 "Proxmox VE 8 host, GPU passthrough")
+      (Node1 "Windows Server 2025 VM, Hyper-V enabled, WWAN profile sync")
+      (Node2 "Ubuntu 24.04 VM, Docker + Kubernetes, WWAN APN provisioning")
+      (Node3 "Proxmox VE 8 host, GPU passthrough, WWAN integration")
     )
     (Services
       (AI_Inference "ONNX runtime, TensorRT, PyTorch")
       (Storage "NVMe Gen5 SSD, Ceph cluster")
-      (Networking "QSFP-DD 400G, Thunderbolt5 tunneling")
+      (Networking "QSFP-DD 400G, Thunderbolt5 tunneling, WWAN multi-active contexts")
     )
     (Security
       (RootOfTrust "OpenTitan validation")
       (Keys "YubiHSM2 hardware key storage")
-      (Policies "FIPS140-3, NIST SP800-193 compliance")
+      (Policies "FIPS140-3, NIST SP800-193 compliance, WWAN secure provisioning")
     )
   )
   (VMWARE_VM_YML
     (File "vmware_cluster.yml")
     (Cluster "VMware ESXi 8")
     (VMs
-      (VM1 "Windows 11 Enterprise, GPU passthrough")
-      (VM2 "Ubuntu 24.04, NPU acceleration")
-      (VM3 "FreeBSD 14, ZFS storage node")
+      (VM1 "Windows 11 Enterprise, GPU passthrough, WWAN integration")
+      (VM2 "Ubuntu 24.04, NPU acceleration, WWAN APN/QoS provisioning")
+      (VM3 "FreeBSD 14, ZFS storage node, WWAN stack validation")
     )
-    (Networking "QSFP-DD 400G, VLAN segmentation")
+    (Networking "QSFP-DD 400G, VLAN segmentation, WWAN RF compliance")
     (Storage "NVMe Gen5 SSD, RAID-10")
   )
 )
