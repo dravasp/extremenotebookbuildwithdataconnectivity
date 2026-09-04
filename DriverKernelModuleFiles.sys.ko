@@ -1,6 +1,6 @@
 (EXPERT_MASTER_DRIVERS
-  (VERSION 1.0)
-  (TITLE "Extreme Performance Laptop - Aerospace Grade Drivers")
+  (VERSION 2.6)
+  (TITLE "Extreme Performance Laptop - Aerospace Grade Drivers (X75 Edition)")
 
   ;; ===========================
   ;; Windows Drivers (.SYS)
@@ -35,6 +35,12 @@
       (Component "Samsung NVMe Gen5 SSD")
       (Features "14GB/s throughput, PCIe Gen5 compliance")
       (Signed "Microsoft WHQL")
+    )
+    (WWAN_DRIVER
+      (File "x75_wwan.sys")
+      (Component "Qualcomm Snapdragon X75 WWAN M.2 3052 Key B")
+      (Features "20 stored profiles, 1–5 active simultaneously, IMS/VoLTE/VoNR, USSD, APN/QoS, PDP contexts")
+      (Signed "Microsoft WHQL, ARM TrustZone, Pluton secure boot chain")
     )
   )
 
@@ -71,6 +77,12 @@
       (Component "Samsung NVMe Gen5 SSD")
       (Features "PCIe Gen5 NVMe driver, 14GB/s throughput")
       (Signed "SHA-512, kernel keyring")
+    )
+    (WWAN_MODULE
+      (File "x75_wwan.ko")
+      (Component "Qualcomm Snapdragon X75 WWAN M.2 3052 Key B")
+      (Features "Multi-active PDP contexts, IMS/VoLTE/VoNR, USSD, APN/QoS provisioning, secure SIM/eSIM LPA integration")
+      (Signed "SHA-512, kernel keyring, OpenTitan root-of-trust")
     )
   )
 )
